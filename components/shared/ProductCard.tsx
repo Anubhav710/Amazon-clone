@@ -1,7 +1,13 @@
+"use client";
+
+import { addToCart } from "@/store/BasketSlice";
+import { useAppDispatch, useAppSelector } from "@/store/store";
 import Image from "next/image";
 import React from "react";
 
-interface ProductProps {
+import { useDispatch } from "react-redux";
+
+export interface ProductProps {
   id: number;
   title: string;
   price: number;
@@ -18,7 +24,22 @@ const ProductCard = ({
   description,
   category,
   image,
+  rating,
 }: ProductProps) => {
+  const dispach = useAppDispatch();
+  const handleAddToCart = () => {
+    const store = {
+      id,
+      title,
+      price,
+      description,
+      category,
+      image,
+      rating,
+    };
+    dispach(addToCart(store));
+  };
+
   return (
     <div className=" rounded-sm relative  m-5 bg-white z-30 p-10  flex flex-col items-center ">
       <h5 className="absolute top-2 right-2 text-xs italic text-gray-400">
@@ -33,7 +54,12 @@ const ProductCard = ({
       <h4>
         <span>₹</span> {price}
       </h4>
-      <button className="mt-auto w-full  button">Add to Cart </button>
+      <button
+        className="mt-auto w-full  button"
+        onClick={() => handleAddToCart()}
+      >
+        Add to Cart
+      </button>
     </div>
   );
 };

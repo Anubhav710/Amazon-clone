@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import {
@@ -7,13 +8,19 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { menuItems } from "@/constants";
+import { useRouter } from "next/navigation";
+import { useAppSelector } from "@/store/store";
 
 const Header = () => {
+  const router = useRouter();
+
+  const item = useAppSelector((store) => store.cartStore.stores);
+
   return (
-    <header className="w-full  bg-[#131921]">
+    <header className="w-full  bg-[#131921] fixed top-0 z-50 ">
       {/* Top Navbar  */}
       <div className="flex items-center justify-between py-2 px-2 lg:px-4 ">
-        <div className="  mr-2 mt-2 ">
+        <Link href={"/"} className="  mr-2 mt-2 ">
           <Image
             src={"/amazon.png"}
             alt="icon"
@@ -21,7 +28,7 @@ const Header = () => {
             height={40}
             className="cursor-pointer"
           />
-        </div>
+        </Link>
         {/* Search  */}
         <div className="bg-yellow-300 flex-grow rounded-md h-10 items-center hover:bg-yellow-500 duration-150 sm:flex hidden ">
           <input
@@ -40,9 +47,12 @@ const Header = () => {
             <p>Returens</p>
             <p className="font-semibold md:text-sm">& Orders</p>
           </div>
-          <div className="cursor-pointer hover:underline relative flex   ">
+          <div
+            onClick={() => router.push("/cart")}
+            className="cursor-pointer hover:underline relative flex   "
+          >
             <div className="w-4 h-4 rounded-full bg-yellow-400 text-black font-bold text-center absolute md:right-5 right-0 -top-1">
-              0
+              {item.length}
             </div>
             <ShoppingCartIcon className="h-10 " />
 

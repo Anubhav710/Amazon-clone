@@ -10,10 +10,14 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
+    "@reduxjs/toolkit": "^2.2.1",
+    "@types/react-redux": "^7.1.33",
     "next": "14.1.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-responsive-carousel": "^3.2.23"
+    "react-redux": "^9.1.0",
+    "react-responsive-carousel": "^3.2.23",
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@types/node": "^20",

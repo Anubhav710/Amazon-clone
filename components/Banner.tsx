@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Banner = () => {
   return (
-    <div className="relative">
+    <div className="relative pt-[6.3rem]">
       <div className="absolute bottom-0 w-full   z-20 h-40 bg-gradient-to-t from-gray-100 to-transparent" />
       <Carousel
         autoPlay
