@@ -9,7 +9,7 @@ type props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-const page = async ({ searchParams }: props) => {
+const Page = async ({ searchParams }: props) => {
   const id = searchParams?.id;
   const numId = Number(id);
   const dispach = useAppDispatch();
@@ -98,4 +98,4 @@ const page = async ({ searchParams }: props) => {
   );
 };
 
-export default page;
+export default Page;
