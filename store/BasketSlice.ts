@@ -58,6 +58,9 @@ export const cartStoreSlice = createSlice({
         (state) => state.id !== action.payload.id
       );
     },
+    subTotal: (state) => {
+      state.stores;
+    },
   },
 });
 

@@ -16,7 +16,7 @@ const ProductFeed = async () => {
   const data = await fetchProduct();
 
   return (
-    <div className="-mt-36">
+    <div className="md:-mt-36">
       <div className=" grid sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 grid-cols-1">
         {data.map((product: ProductProps) => (
           <ProductCard
@@ -25,7 +25,7 @@ const ProductFeed = async () => {
             category={product.category}
             description={product.description}
             image={product.image}
-            price={product.price}
+            price={product.price + 278}
             title={product.title}
             rating={product.rating}
           />

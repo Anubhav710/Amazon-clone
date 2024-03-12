@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Pd>
           <Header />
-          <div className="w-full bg-gray-100">
+          <div className="w-full ">
             <div className="max-w-screen-2xl mx-auto  ">{children}</div>
           </div>
         </Pd>

@@ -33,6 +33,7 @@ const Header = () => {
         <div className="bg-yellow-300 flex-grow rounded-md h-10 items-center hover:bg-yellow-500 duration-150 sm:flex hidden ">
           <input
             type="text"
+            placeholder="Search Products"
             className="p-2 h-full focus:outline-none flex-grow rounded-l-md"
           />
           <MagnifyingGlassIcon className="h-14 p-4 stroke-[2px]" />
