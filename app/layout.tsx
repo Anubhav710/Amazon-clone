@@ -7,7 +7,7 @@ import { Providers as Pd } from "@/store/provides";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Amazon",
+  title: "Amazon Clone",
   description: "Created a Amazon E-commerce Website",
 };
 
